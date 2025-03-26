@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Flower Quiz | Floral Fantasy</title>
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-image:url('https://pub-static.fotor.com/assets/bg/cfb5bf55-dd87-47cc-8676-32bb8383d4c7.png'); padding: 50px;">
+
+    <div class="quiz-container" style="max-width: 700px; margin: 0 auto; background-color:transparent;border: 1px solid black; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); padding: 30px; text-align: center;">
+        <h2 style="color: #6A5ACD; font-size: 32px; font-weight: bold; margin-bottom: 30px;">🌸 Find Your Personality Flower! 🌼</h2>
+        <p><a href="home.php" style="text-decoration: none; color: black;">Home</a> /quiz</p>
+
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <p style="font-size: 20px; color: #444; font-weight: bold; margin-bottom: 15px;">1. What’s your ideal way to spend a relaxing day?</p>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q1" value="pink_rose" onclick="checkAnswers()" style="margin-right: 10px;"> In a beautiful garden surrounded by pink roses 🌹
+            </label>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q1" value="yellow_queen_rose" onclick="checkAnswers()" style="margin-right: 10px;"> At the beach under the warm sun 🌞
+            </label>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q1" value="lavender" onclick="checkAnswers()" style="margin-right: 10px;"> In a quiet room, reading a book with lavender scents 💜
+            </label>
+
+            <!-- Question 2 -->
+            <p style="font-size: 20px; color: #444; font-weight: bold; margin-bottom: 15px;">2. Which color best reflects your personality?</p>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q2" value="pink_rose" onclick="checkAnswers()" style="margin-right: 10px;"> Soft pink 🌸
+            </label>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q2" value="yellow_queen_rose" onclick="checkAnswers()" style="margin-right: 10px;"> Bright yellow 🌞
+            </label>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q2" value="lavender" onclick="checkAnswers()" style="margin-right: 10px;"> Calm purple 💜
+            </label>
+
+            <!-- Question 3 -->
+            <p style="font-size: 20px; color: #444; font-weight: bold; margin-bottom: 15px;">3. How do you usually express love?</p>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q3" value="pink_rose" onclick="checkAnswers()" style="margin-right: 10px;"> With deep passion and romance ❤️
+            </label>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q3" value="yellow_queen_rose" onclick="checkAnswers()" style="margin-right: 10px;"> Through cheerful gestures and positivity 🌻
+            </label>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q3" value="lavender" onclick="checkAnswers()" style="margin-right: 10px;"> With quiet affection and gentle words 🌸
+            </label>
+
+            <!-- Question 4 -->
+            <p style="font-size: 20px; color: #444; font-weight: bold; margin-bottom: 15px;">4. Which environment would you prefer to live in?</p>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q4" value="pink_rose" onclick="checkAnswers()" style="margin-right: 10px;"> A romantic garden filled with blooming pink roses 🌹
+            </label>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q4" value="yellow_queen_rose" onclick="checkAnswers()" style="margin-right: 10px;"> A sunny, beachside cottage 🌊
+            </label>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q4" value="lavender" onclick="checkAnswers()" style="margin-right: 10px;"> A peaceful cottage surrounded by lavender fields 💜
+            </label>
+
+            <!-- Question 5 -->
+            <p style="font-size: 20px; color: #444; font-weight: bold; margin-bottom: 15px;">5. What type of flower do you think represents you the most?</p>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q5" value="pink_rose" onclick="checkAnswers()" style="margin-right: 10px;"> A soft pink rose 🌷
+            </label>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q5" value="yellow_queen_rose" onclick="checkAnswers()" style="margin-right: 10px;"> A cheerful yellow rose 🌻
+            </label>
+            <label style="font-size: 18px; color: #333; display: block; margin-bottom: 10px;">
+                <input type="radio" name="q5" value="lavender" onclick="checkAnswers()" style="margin-right: 10px;"> A calming lavender 💜
+            </label><!-- Questions remain unchanged -->
+        </form>
+
+        <button type="button" id="seeMyFlowerBtn" onclick="calculateResult()" disabled style="background-color: #FF69B4; color: white; border: none; padding: 15px 30px; font-size: 20px; cursor: pointer; border-radius: 10px; margin-top: 20px; transition: all 0.3s ease;">
+            See My Flower
+        </button>
+
+        <div id="result" class="hidden" style="margin-top: 30px; text-align: center;">
+            <h3 style="font-size: 24px; color: #444; margin-bottom: 20px;">Your Personality Flower is:</h3>
+            <p id="flowerDescription" style="font-size: 20px; color: #444; margin-bottom: 20px;"></p>
+            <img id="flowerImage" src="" alt="Personality Flower" style="width: 200px; height: auto; margin-bottom: 20px; display: none; border-radius: 10px;">
+            <a id="shopLink" href="#" class="shop-btn" style="font-size: 20px; text-decoration: none; padding: 15px 30px; background-color: #FF69B4; color: white; border-radius: 10px; display: inline-block; transition: all 0.3s ease;">Shop Now</a>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            let allAnswered = true;
+            let radioButtons = document.querySelectorAll("input[type='radio']");
+            radioButtons.forEach(function(button) {
+                let groupName = button.name;
+                let groupButtons = document.getElementsByName(groupName);
+                let isGroupAnswered = false;
+                groupButtons.forEach(function(groupButton) {
+                    if (groupButton.checked) {
+                        isGroupAnswered = true;
+                    }
+                });
+                if (!isGroupAnswered) {
+                    allAnswered = false;
+                }
+            });
+            document.getElementById("seeMyFlowerBtn").disabled = !allAnswered;
+        }
+
+        function calculateResult() {
+            let answers = {
+                pink_rose: 0,
+                yellow_queen_rose: 0,
+                lavender: 0,
+            };
+            let selectedAnswers = document.querySelectorAll("input[type='radio']:checked");
+            if (selectedAnswers.length === 0) {
+                alert("Please answer all the questions before clicking 'See My Flower'");
+                return;
+            }
+            selectedAnswers.forEach(answer => {
+                answers[answer.value]++;
+            });
+            let personalityFlower = Object.keys(answers).reduce((a, b) => answers[a] > answers[b] ? a : b);
+            let resultDiv = document.getElementById("result");
+            let flowerDescription = document.getElementById("flowerDescription");
+            let flowerImage = document.getElementById("flowerImage");
+            let shopLink = document.getElementById("shopLink");
+
+            if (personalityFlower === "pink_rose") {
+                flowerDescription.innerHTML = "🌷 You are graceful and romantic! The pink rose represents elegance, admiration, and sweet love.";
+                flowerImage.src = "flowers/pink roses.jpg"; // Replace with actual image URL
+                flowerImage.style.display = "block"; // Ensures the image is treated as a block element
+                flowerImage.style.margin = "0 auto";
+                shopLink.href = "shop.php?flower=pink_rose";
+            } else if (personalityFlower === "yellow_queen_rose") {
+                flowerDescription.innerHTML = "🌻 You are vibrant and full of life! The yellow queen rose symbolizes warmth, joy, and positivity.";
+                flowerImage.src = "flowers/yellow queen rose.jpg";
+                flowerImage.style.display = "block"; // Ensures the image is treated as a block element
+                flowerImage.style.margin = "0 auto";
+                shopLink.href = "shop.php?flower=yellow_queen_rose";
+            } else if (personalityFlower === "lavender") {
+                flowerDescription.innerHTML = "💜 You are peaceful and calming. Lavender symbolizes purity, grace, and serenity.";
+                flowerImage.src = "flowers/lavendor rose.jpg";
+                flowerImage.style.display = "block"; // Ensures the image is treated as a block element
+                flowerImage.style.margin = "0 auto";
+                shopLink.href = "shop.php?flower=lavender";
+            }
+
+            flowerImage.style.display = "block"; // Show image
+            resultDiv.classList.remove("hidden"); // Show result
+        }
+    </script>
+
+</body>
+</html>
